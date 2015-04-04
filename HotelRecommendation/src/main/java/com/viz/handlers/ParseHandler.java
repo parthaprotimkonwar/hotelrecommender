@@ -23,7 +23,7 @@ public class ParseHandler {
 		// Loader.initializeCache();
 		// ParseHandler ps = new ParseHandler();
 		// Location location = new Location(12.9697220d, 77.6430061d);
-		List<String> possible = parseDialogue("Having Italian at Truffles at Koramangala.");
+		List<String> possible = parseDialogue(status);
 		System.out.println(possible);
 		List<Suggestions> suggestions = Helper.suggest(location, possible);
 		Comparator<Suggestions> compr = new Comparator<Suggestions>() {
