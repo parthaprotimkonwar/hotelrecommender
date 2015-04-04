@@ -58,7 +58,8 @@ public class ParseHandler {
 
 	public List<String> parseDialogue(String para) throws Exception {
 		List<String> possible = new ArrayList<String>();
-		InputStream is = new FileInputStream(Constants.path + "en-token.bin");
+		//InputStream is = new FileInputStream(Constants.path + "en-token.bin");
+		InputStream is = Loader.class.getClassLoader().getResourceAsStream("/en-token.bin");
 		TokenizerModel model = new TokenizerModel(is);
 		Tokenizer tokenizer = new TokenizerME(model);
 		String tokens[] = tokenizer.tokenize(para);
