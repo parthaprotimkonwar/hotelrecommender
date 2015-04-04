@@ -50,8 +50,8 @@ public class Util {
 			jsonEntry = new JSONObject();
 			try {
 				jsonEntry.put("hotelName", aVenue.getName());
-				jsonEntry.put("hotelImageUrl", imageUrl);
-				jsonEntry.put("hotelUrl", url);
+				jsonEntry.put("hotelImageUrl", url);
+				jsonEntry.put("hotelUrl", imageUrl);
 				jsonEntry.put("hotelAddr", aVenue.getArea().getName());
 			} catch (JSONException e) {
 				e.printStackTrace();
