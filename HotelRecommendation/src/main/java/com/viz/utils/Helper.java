@@ -92,8 +92,8 @@ public class Helper {
 		for (Venue cur : allHotels) {
 			Location hotelLocation = cur.getLocation();
 			double dis = getDistance(hotelLocation, location);
-			// System.out.println("distance of " + location + " is " +
-			// hotelLocation + " is " + dis);
+			 System.out.println("distance of " + location + " is " +
+			hotelLocation + " is " + dis);
 			if (dis <= distance) {
 				Suggestions suggestions = new Suggestions();
 				suggestions.setVenue(cur);
