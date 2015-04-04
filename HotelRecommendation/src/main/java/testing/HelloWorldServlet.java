@@ -47,7 +47,7 @@ public class HelloWorldServlet extends HttpServlet {
 		String data = null;
 		String latitude = null;
 		String longitude = null;
-		//System.out.println(request11);
+		System.out.println(request11);
 		try {
 			object = new JSONObject(request11);
 			data = object.getString("name");
