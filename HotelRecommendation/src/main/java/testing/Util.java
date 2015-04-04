@@ -49,10 +49,10 @@ public class Util {
 			
 			jsonEntry = new JSONObject();
 			try {
-				jsonEntry.put("hotelID", aVenue.getName());
-				jsonEntry.put("imageUrl", imageUrl);
-				jsonEntry.put("locationUrl", url);
-				jsonEntry.put("address", aVenue.getArea().getName());
+				jsonEntry.put("hotelName", aVenue.getName());
+				jsonEntry.put("hotelImageUrl", imageUrl);
+				jsonEntry.put("hotelUrl", url);
+				jsonEntry.put("hotelAddr", aVenue.getArea().getName());
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
