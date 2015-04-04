@@ -14,6 +14,9 @@ import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
+import com.viz.model.Suggestions;
+import com.viz.model.Venue;
+
 public class Util {
 	
 	
@@ -32,6 +35,42 @@ public class Util {
 			}
 			jsonArray.put(jsonEntry);
 		}
+		return jsonArray;
+	}
+	
+	public static JSONArray generateResponseForSuggestionsJSON(List<Suggestions> suggestion) {
+		
+		JSONArray jsonArray = new JSONArray();
+		JSONObject jsonEntry;
+		for(Suggestions aSuggestion : suggestion) {
+			Venue aVenue = aSuggestion.getVenue();
+			String imageUrl = aVenue.getiUrl();
+			String url = aVenue.getUrl();
+			
+			jsonEntry = new JSONObject();
+			try {
+				jsonEntry.put("hotelID", aVenue.getName());
+				jsonEntry.put("imageUrl", imageUrl);
+				jsonEntry.put("locationUrl", url);
+				jsonEntry.put("address", aVenue.getArea().getName());
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			jsonArray.put(jsonEntry);
+			
+		}
+		
+		/*for(int i=0;i<hotels.size();i++) {
+			
+			jsonEntry = new JSONObject();
+			try {
+				jsonEntry.put("hotelID", hotels.get(i));
+				jsonEntry.put("imageURl", imageUrl.get(i));
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			jsonArray.put(jsonEntry);
+		}*/
 		return jsonArray;
 	}
 	

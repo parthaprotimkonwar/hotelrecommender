@@ -13,6 +13,10 @@ import org.codehaus.jettison.json.JSONArray;
 import org.codehaus.jettison.json.JSONException;
 import org.codehaus.jettison.json.JSONObject;
 
+import com.viz.handlers.ParseHandler;
+import com.viz.model.Location;
+import com.viz.model.Suggestions;
+
 /**
  * Servlet implementation class HelloWorldServlet
  */
@@ -62,6 +66,19 @@ public class HelloWorldServlet extends HttpServlet {
 		System.out.println(longitude);
 		
 		
+		ParseHandler ps = new ParseHandler();
+		String status = data;
+		Location location = new Location(new Double(longitude), new Double(latitude));
+		List<Suggestions> listOfSuggestions = null;
+		try {
+			listOfSuggestions = ps.suggestMeSomething(status, location);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+		
+		
 		List<String> hotels = new ArrayList<String>();
 		List<String> image = new ArrayList<String>();
 		
@@ -72,6 +89,10 @@ public class HelloWorldServlet extends HttpServlet {
 			image.add("My image" + i);
 		}
 		
+		
+		/**
+		 * Send Response
+		 */
 		JSONArray jsonArray = Util.generateResponseJSON(hotels, image);
 		response.setContentType("application/json");
 		response.getWriter().write(jsonArray.toString());

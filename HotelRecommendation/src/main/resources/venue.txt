@@ -1,0 +1,25 @@
+Truffles|Kormangala|12.933093|77.613734|Cafe, American, Italian, Desserts, Fast Food|4.6|url|iurl
+Meghana Foods|Kormangala|12.934592|77.616250|Chinese, Biryani, Seafood, Andhra|3.9|url|iurl
+Hunan|Kormangala|12.934785|77.616166|Chinese, Thai, Seafood|4.1|url|iurl
+California Burrito|Kormangala|12.934712|77.616197|Mexican, Fast Food|3.8|url|iurl
+Punjab Grill|Kormangala|12.934292|77.612745|North Indian|4|url|iurl
+Hotel Empire International|Kormangala| 12.934769|77.615713|North Indian, South Indian, Biryani, Chinese|2.6|url|iurl
+The Fort Kochi Connection|Kormangala|12.932477| 77.613540|Seafood, Kerala, Chinese, European, Portuguese|3.9|url|iurl
+Kritunga Restaurant|Kormangala|12.934394|77.615951|Andhra, Biryani|3.7|url|iurl
+Eastern Diner|Kormangala|12.933666|77.615644|Continental, Chinese, Italian, Tibetan, Fast Food|3.9|url|iurl
+California Pizza Kitchen|Kormangala|12.934520|77.616037|Italian, Pizza|3.4|url|iurl
+Popsies|Kormangala|12.935443|77.626358|Chinese|3.3|url|iurl
+Smoke - The Sizzler House|Kormangala|12.936389|77.615082|Continental, Italian, North Indian|3.7|url|iurl
+Mani's Dum Biryani|Kormangala|12.933336|77.615597|Biryani, Andhra|3.4|url|iurl
+Rajdhani Thali Restaurant|Kormangala|12.936493|77.626884|North Indian|4.1|url|iurl
+Aalishan Restaurant & Caterer|Kormangala|12.936557|77.614437|North Indian, Mughlai|3.1|url|iurl
+Sufi|Kormangala|12.935608|77.615579|Parsi, North Indian|3.7|url|iurl
+Friends Euro Fast Food|Kormangala|12.936195|77.614815|Italian, Steakhouse, Chinese, Fast Food|3.7|url|iurl
+Mad Over Donuts|Kormangala|12.934652|77.612639|Desserts|4.1|url|iurl
+Faaso's|Kormangala|12.934487|77.616355|Fast Food, North Indian|3.6|url|iurl
+Forking Rolls|Kormangala|12.935370|77.615174| Chinese, Fast Food|3.8|url|iurl
+Axomi - Taste of Assam|Kormangala|12.936260|77.614845|Assamese|3.7|url|iurl
+Chaat Wala|Kormangala|12.933570|77.615249|North Indian, Fast Food, Street Food|3.8|url|iurl
+Chung Wah|Kormangala|12.936567|77.620367|Chinese|3.4|url|iurl
+Peace Restaurant|Kormangala|12.934569|77.616311|Chinese, Tibetan|3.6|url|iurl
+Calvin's|Kormangala|12.934628|77.616399|Desserts, Cafe, Fast Food, Italian|3.8|url|iurl
