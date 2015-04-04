@@ -72,7 +72,7 @@ public class HelloWorldServlet extends HttpServlet {
 		
 		ParseHandler ps = new ParseHandler();
 		String status = data;
-		Location location = new Location(new Double(longitude), new Double(latitude));
+		Location location = new Location(new Double(latitude), new Double(longitude));
 		List<Suggestions> listOfSuggestions = null;
 		try {
 			listOfSuggestions = ps.suggestMeSomething(status, location);
