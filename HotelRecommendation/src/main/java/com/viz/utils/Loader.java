@@ -45,9 +45,11 @@ public class Loader {
 	}
 
 	private static void loadTags() {
-		//File hotelFile = new File(Constants.path + "tags.txt");
-		//InputStream hotelFile = Loader.class.getClassLoader().getResourceAsStream("tags.txt");
-		try (FileInputStream hotelfi = (FileInputStream) Loader.class.getClassLoader().getResourceAsStream("tags.txt");
+		// File hotelFile = new File(Constants.path + "tags.txt");
+		// InputStream hotelFile =
+		// Loader.class.getClassLoader().getResourceAsStream("tags.txt");
+		try (FileInputStream hotelfi = (FileInputStream) Loader.class
+				.getClassLoader().getResourceAsStream("tags.txt");
 				BufferedReader br = new BufferedReader(new InputStreamReader(
 						hotelfi))) {
 			String line = "";
@@ -65,9 +67,10 @@ public class Loader {
 	}
 
 	private static void loadSections() {
-		//File hotelFile = new File(Constants.path + "sections.txt");
+		// File hotelFile = new File(Constants.path + "sections.txt");
 
-		try (FileInputStream hotelfi = (FileInputStream) Loader.class.getClassLoader().getResourceAsStream("sections.txt");
+		try (FileInputStream hotelfi = (FileInputStream) Loader.class
+				.getClassLoader().getResourceAsStream("sections.txt");
 				BufferedReader br = new BufferedReader(new InputStreamReader(
 						hotelfi))) {
 			String line = "";
@@ -82,14 +85,19 @@ public class Loader {
 	}
 
 	private static void loadVenues() {
-		//File hotelFile = new File(Constants.path + "finaldata.txt");
+		// File hotelFile = new File(Constants.path + "finaldata.txt");
 
-		//File hotelFile = Loader.class.getClassLoader().getResourceAsStream("tags.txt");
-		
-		try /*(FileInputStream hotelfi = (FileInputStream) Loader.class.getClassLoader().getResourceAsStream("finaldata.txt");
-				BufferedReader br = new BufferedReader(new InputStreamReader(
-						hotelfi))) */{
-			InputStream io = Loader.class.getClassLoader().getResourceAsStream("finaldata.txt");
+		// File hotelFile =
+		// Loader.class.getClassLoader().getResourceAsStream("tags.txt");
+
+		try /*
+			 * (FileInputStream hotelfi = (FileInputStream)
+			 * Loader.class.getClassLoader
+			 * ().getResourceAsStream("finaldata.txt"); BufferedReader br = new
+			 * BufferedReader(new InputStreamReader( hotelfi)))
+			 */{
+			InputStream io = Loader.class.getClassLoader().getResourceAsStream(
+					"finaldata.txt");
 			BufferedReader br = new BufferedReader(new InputStreamReader(io));
 			String line = "";
 			while ((line = br.readLine()) != null) {
@@ -133,6 +141,7 @@ public class Loader {
 				venue.setRating(Double.parseDouble(tockens[5]));
 				venue.setiUrl(tockens[6]);
 				venue.setUrl(tockens[7]);
+				venue.setAddress(tockens[8]);
 
 				Cache.listOfVenues.add(venue);
 			}

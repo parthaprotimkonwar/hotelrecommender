@@ -54,10 +54,12 @@ public class Helper {
 			List<String> oldtags) {
 		Set<Integer> tags = getListOfTags(oldtags);
 		List<Suggestions> result = new ArrayList<Suggestions>();
-		List<Suggestions> nearHotel = nearestHotel(location, allowedDistance);
+		List<Suggestions> nearHotel = new ArrayList<Suggestions>();
 		System.out.println("we want " + tags);
 		if (tags == null || tags.isEmpty())
 			return nearHotel;
+
+		nearHotel = nearestHotel(location, allowedDistance);
 		for (Suggestions cur : nearHotel) {
 			// System.out.println("near hotel is " + cur);
 			// System.out.println("it ahs tags " + cur.getAplicableTags());
@@ -92,8 +94,8 @@ public class Helper {
 		for (Venue cur : allHotels) {
 			Location hotelLocation = cur.getLocation();
 			double dis = getDistance(hotelLocation, location);
-			 System.out.println("distance of " + location + " is " +
-			hotelLocation + " is " + dis);
+			System.out.println("distance of " + location + " is "
+					+ hotelLocation + " is " + dis);
 			if (dis <= distance) {
 				Suggestions suggestions = new Suggestions();
 				suggestions.setVenue(cur);

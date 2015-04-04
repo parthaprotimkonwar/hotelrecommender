@@ -26,42 +26,51 @@ public class ParseHandler {
 		List<String> possible = parseDialogue(status);
 		System.out.println(possible);
 		List<Suggestions> suggestions = Helper.suggest(location, possible);
-		
-		Comparator<Suggestions> compr = new Comparator<Suggestions>() {
-			@Override
-			public int compare(Suggestions o1, Suggestions o2) {
-				if (o1.getCfactor() > o2.getCfactor())
-					return -1;
-				return 1;
-				/*-if (o1.getMfactor() < o2.getMfactor())
-					return -1;
-				if (o1.getMfactor() > o2.getMfactor())
+
+		if (suggestions != null && !suggestions.isEmpty()) {
+
+			Comparator<Suggestions> compr = new Comparator<Suggestions>() {
+				@Override
+				public int compare(Suggestions o1, Suggestions o2) {
+					if (o1.getCfactor() > o2.getCfactor())
+						return -1;
 					return 1;
-				if (o1.getVenue().getRating() > o2.getVenue().getRating())
-					return -1;
-				return 1;*/
+					/*-if (o1.getMfactor() < o2.getMfactor())
+						return -1;
+					if (o1.getMfactor() > o2.getMfactor())
+						return 1;
+					if (o1.getVenue().getRating() > o2.getVenue().getRating())
+						return -1;
+					return 1;*/
+				}
+			};
+			Collections.sort(suggestions, compr);
+
+			System.out.println("Sugestions are: ");
+			System.out.println("Size :" + suggestions.size());
+			for (Suggestions sug : suggestions) {
+				Venue cur = sug.getVenue();
+				System.out.println(cur.getId() + "|" + cur.getRating() + "|"
+						+ cur.getArea() + "|" + sug.getDfactor() + "|"
+						+ sug.getCfactor());
 			}
-		};
-		Collections.sort(suggestions, compr);
-		System.out.println("Sugestions are: ");
-		System.out.println("Size :" + suggestions.size());
-		for (Suggestions sug : suggestions) {
-			Venue cur = sug.getVenue();
-			System.out.println(cur.getId() + "|" + cur.getRating() + "|"
-					+ cur.getArea() + "|" + sug.getDfactor() + "|"
-					+ sug.getCfactor());
+		} else {
+			System.out.println("No suggestions for you!!!");
+			suggestions = new ArrayList<Suggestions>();
 		}
 		// List<Hotel> hotels = Helper.getListOfHotels(possible);
 		// ps.getSentences("Hi. How are you? This is Mike.");
 		// ps.findTags();
-		
+
 		return suggestions;
 	}
 
 	public List<String> parseDialogue(String para) throws Exception {
 		List<String> possible = new ArrayList<String>();
-		//InputStream is = new FileInputStream(Constants.path + "en-token.bin");
-		InputStream is = Loader.class.getClassLoader().getResourceAsStream("/en-token.bin");
+		// InputStream is = new FileInputStream(Constants.path +
+		// "en-token.bin");
+		InputStream is = Loader.class.getClassLoader().getResourceAsStream(
+				"/en-token.bin");
 		TokenizerModel model = new TokenizerModel(is);
 		Tokenizer tokenizer = new TokenizerME(model);
 		String tokens[] = tokenizer.tokenize(para);

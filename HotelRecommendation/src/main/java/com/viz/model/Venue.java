@@ -7,6 +7,7 @@ public class Venue {
 
 	private int id;
 	private String name;
+	private String address;
 	private Location location;
 	private Section section;
 	private Area area;
@@ -91,12 +92,20 @@ public class Venue {
 		this.iUrl = iUrl;
 	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	@Override
 	public String toString() {
-		return "Venue [id=" + id + ", name=" + name + ", location=" + location
-				+ ", section=" + section + ", area=" + area
-				+ ", aplicableTags=" + aplicableTags + ", rating=" + rating
-				+ ", url=" + url + ", iUrl=" + iUrl + "]";
+		return "Venue [id=" + id + ", name=" + name + ", address=" + address
+				+ ", location=" + location + ", section=" + section + ", area="
+				+ area + ", aplicableTags=" + aplicableTags + ", rating="
+				+ rating + ", url=" + url + ", iUrl=" + iUrl + "]";
 	}
 
 	/*-public void setLocation(Location l) {
