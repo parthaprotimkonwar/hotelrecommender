@@ -26,6 +26,7 @@ public class ParseHandler {
 		List<String> possible = parseDialogue(status);
 		System.out.println(possible);
 		List<Suggestions> suggestions = Helper.suggest(location, possible);
+		
 		Comparator<Suggestions> compr = new Comparator<Suggestions>() {
 			@Override
 			public int compare(Suggestions o1, Suggestions o2) {
@@ -43,6 +44,7 @@ public class ParseHandler {
 		};
 		Collections.sort(suggestions, compr);
 		System.out.println("Sugestions are: ");
+		System.out.println("Size :" + suggestions.size());
 		for (Suggestions sug : suggestions) {
 			Venue cur = sug.getVenue();
 			System.out.println(cur.getId() + "|" + cur.getRating() + "|"
