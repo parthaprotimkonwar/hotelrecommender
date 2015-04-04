@@ -16,13 +16,14 @@ import org.codehaus.jettison.json.JSONObject;
 import com.viz.handlers.ParseHandler;
 import com.viz.model.Location;
 import com.viz.model.Suggestions;
+import com.viz.utils.Loader;
 
 /**
  * Servlet implementation class HelloWorldServlet
  */
 public class HelloWorldServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    public static int count =0;  
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -45,7 +46,10 @@ public class HelloWorldServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		if(count == 0){
+			Loader.initializeCache();
+			count++;
+		}
 		String request11 = Util.getBody(request);
 		JSONObject object = null;
 		String data = null;
