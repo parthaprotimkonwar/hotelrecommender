@@ -46,7 +46,7 @@ public class Loader {
 	private static void loadTags() {
 		//File hotelFile = new File(Constants.path + "tags.txt");
 		//InputStream hotelFile = Loader.class.getClassLoader().getResourceAsStream("tags.txt");
-		try (FileInputStream hotelfi = (FileInputStream) Loader.class.getClassLoader().getResourceAsStream("/tags.txt");
+		try (FileInputStream hotelfi = (FileInputStream) Loader.class.getClassLoader().getResourceAsStream("tags.txt");
 				BufferedReader br = new BufferedReader(new InputStreamReader(
 						hotelfi))) {
 			String line = "";
@@ -66,7 +66,7 @@ public class Loader {
 	private static void loadSections() {
 		//File hotelFile = new File(Constants.path + "sections.txt");
 
-		try (FileInputStream hotelfi = (FileInputStream) Loader.class.getClassLoader().getResourceAsStream("/sections.txt");
+		try (FileInputStream hotelfi = (FileInputStream) Loader.class.getClassLoader().getResourceAsStream("sections.txt");
 				BufferedReader br = new BufferedReader(new InputStreamReader(
 						hotelfi))) {
 			String line = "";
@@ -85,7 +85,7 @@ public class Loader {
 
 		//File hotelFile = Loader.class.getClassLoader().getResourceAsStream("tags.txt");
 
-		try (FileInputStream hotelfi = (FileInputStream) Loader.class.getClassLoader().getResourceAsStream("/finaldata.txt");
+		try (FileInputStream hotelfi = (FileInputStream) Loader.class.getClassLoader().getResourceAsStream("finaldata.txt");
 				BufferedReader br = new BufferedReader(new InputStreamReader(
 						hotelfi))) {
 			String line = "";
