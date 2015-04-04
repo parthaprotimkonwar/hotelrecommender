@@ -1,10 +1,15 @@
 package testing;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.codehaus.jettison.json.JSONArray;
+import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONObject;
 
 /**
  * Servlet implementation class HelloWorldServlet
@@ -37,7 +42,24 @@ public class HelloWorldServlet extends HttpServlet {
 		
 		String request11 = Util.getBody(request);
 		System.out.println(request11);
-		response.getWriter().print(" POST Called : You are Hacked !!!");
+		
+		
+		//JSONObject jsonObject = new JSONObject();
+		JSONArray jsonArray = new JSONArray();
+		JSONObject jsonEntry;
+		for(int i=0;i<10;i++) {
+			
+			jsonEntry = new JSONObject();
+			try {
+				jsonEntry.put("hotelID", "hotel" + i);
+				jsonEntry.put("imageURl", "image" + i);
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			jsonArray.put(jsonEntry);
+		}
+		response.setContentType("application/json");
+		response.getWriter().write(jsonArray.toString());
 		
 	}
 
