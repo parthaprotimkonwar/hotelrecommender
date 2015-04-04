@@ -1,6 +1,8 @@
 package testing;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -45,7 +47,7 @@ public class HelloWorldServlet extends HttpServlet {
 		
 		
 		//JSONObject jsonObject = new JSONObject();
-		JSONArray jsonArray = new JSONArray();
+		/*JSONArray jsonArray = new JSONArray();
 		JSONObject jsonEntry;
 		for(int i=0;i<10;i++) {
 			
@@ -57,7 +59,18 @@ public class HelloWorldServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 			jsonArray.put(jsonEntry);
+		}*/
+		List<String> hotels = new ArrayList<String>();
+		List<String> image = new ArrayList<String>();
+		
+		for(int i=0;i<10;i++) {
+			hotels.add("My HOtel" + i);
 		}
+		for(int i=0;i<10;i++) {
+			image.add("My image" + i);
+		}
+		
+		JSONArray jsonArray = Util.generateResponseJSON(hotels, image);
 		response.setContentType("application/json");
 		response.getWriter().write(jsonArray.toString());
 		

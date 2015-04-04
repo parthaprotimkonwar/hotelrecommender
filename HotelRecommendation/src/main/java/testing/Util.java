@@ -4,10 +4,35 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.codehaus.jettison.json.JSONArray;
+import org.codehaus.jettison.json.JSONException;
+import org.codehaus.jettison.json.JSONObject;
+
 public class Util {
+	
+	
+	public static JSONArray generateResponseJSON(List<String> hotels, List<String> imageUrl) {
+		
+		JSONArray jsonArray = new JSONArray();
+		JSONObject jsonEntry;
+		for(int i=0;i<hotels.size();i++) {
+			
+			jsonEntry = new JSONObject();
+			try {
+				jsonEntry.put("hotelID", hotels.get(i));
+				jsonEntry.put("imageURl", imageUrl.get(i));
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			jsonArray.put(jsonEntry);
+		}
+		return jsonArray;
+	}
+	
 
 	public static String getBody(HttpServletRequest request) throws IOException {
 
