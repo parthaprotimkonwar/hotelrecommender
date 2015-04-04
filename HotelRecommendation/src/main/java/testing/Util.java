@@ -36,18 +36,6 @@ public class Util {
 	}
 	
 
-	public static JSONObject requestParamsToJSON(ServletRequest req) throws JSONException {
-		  
-		JSONObject jsonObj = new JSONObject();
-		Map<String,String[]> params = req.getParameterMap();
-		for (Map.Entry<String,String[]> entry : params.entrySet()) {
-			String v[] = entry.getValue();
-		    Object o = (v.length == 1) ? v[0] : v;
-		    jsonObj.put(entry.getKey(), o);
-		}
-		return jsonObj;
-	}
-	
 	public static String getBody(HttpServletRequest request) throws IOException {
 
 	    String body = null;

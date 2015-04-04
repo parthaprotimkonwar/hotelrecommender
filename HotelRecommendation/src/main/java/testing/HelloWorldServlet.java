@@ -42,35 +42,26 @@ public class HelloWorldServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		String request11 = Util.getBody(request);
+		JSONObject object = null;
+		String data = null;
+		String latitude = null;
+		String longitude = null;
+		//System.out.println(request11);
 		try {
-			JSONObject obj = Util.requestParamsToJSON(request);
-			System.out.println(obj);
-			System.out.println("Data :" + obj.get("data"));
-			System.out.println("Lat :" + obj.get("lat"));
-			System.out.println("Lon :" + obj.get("long"));
+			object = new JSONObject(request11);
+			data = object.getString("name");
+			latitude = object.getString("lat");
+			longitude = object.getString("lon");
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		String request11 = Util.getBody(request);
-		System.out.println(request11);
+		System.out.println(data);
+		System.out.println(latitude);
+		System.out.println(longitude);
 		
 		
-		//JSONObject jsonObject = new JSONObject();
-		/*JSONArray jsonArray = new JSONArray();
-		JSONObject jsonEntry;
-		for(int i=0;i<10;i++) {
-			
-			jsonEntry = new JSONObject();
-			try {
-				jsonEntry.put("hotelID", "hotel" + i);
-				jsonEntry.put("imageURl", "image" + i);
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}
-			jsonArray.put(jsonEntry);
-		}*/
 		List<String> hotels = new ArrayList<String>();
 		List<String> image = new ArrayList<String>();
 		
