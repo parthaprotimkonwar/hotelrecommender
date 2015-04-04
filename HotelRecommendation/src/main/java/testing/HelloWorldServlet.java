@@ -79,7 +79,7 @@ public class HelloWorldServlet extends HttpServlet {
 		
 		
 		
-		List<String> hotels = new ArrayList<String>();
+		/*List<String> hotels = new ArrayList<String>();
 		List<String> image = new ArrayList<String>();
 		
 		for(int i=0;i<10;i++) {
@@ -87,13 +87,13 @@ public class HelloWorldServlet extends HttpServlet {
 		}
 		for(int i=0;i<10;i++) {
 			image.add("My image" + i);
-		}
+		}*/
 		
 		
 		/**
 		 * Send Response
 		 */
-		JSONArray jsonArray = Util.generateResponseJSON(hotels, image);
+		JSONArray jsonArray = Util.generateResponseForSuggestionsJSON(listOfSuggestions);
 		response.setContentType("application/json");
 		response.getWriter().write(jsonArray.toString());
 		
