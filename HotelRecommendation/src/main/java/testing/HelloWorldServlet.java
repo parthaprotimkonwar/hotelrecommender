@@ -45,6 +45,9 @@ public class HelloWorldServlet extends HttpServlet {
 		try {
 			JSONObject obj = Util.requestParamsToJSON(request);
 			System.out.println(obj);
+			System.out.println("Data :" + obj.get("data"));
+			System.out.println("Lat :" + obj.get("lat"));
+			System.out.println("Lon :" + obj.get("long"));
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
