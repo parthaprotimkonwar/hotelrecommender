@@ -35,6 +35,9 @@ public class HelloWorldServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		String request11 = Util.getBody(request);
+		System.out.println(request11);
+		response.getWriter().print(" POST Called : You are Hacked !!!");
 		
 	}
 
