@@ -28,6 +28,7 @@ public class ZomatoCrawler {
 		
 		for(Element aSearchResultAll : searchResultAllClass) {
 			
+			
 			String href = null;
 			String restrauName = null;
 			String address = null;
