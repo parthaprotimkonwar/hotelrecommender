@@ -46,13 +46,15 @@ public class Util {
 			Venue aVenue = aSuggestion.getVenue();
 			String imageUrl = aVenue.getiUrl();
 			String url = aVenue.getUrl();
-			
+			String distance = String.format(".2d", aSuggestion.getDfactor());
 			jsonEntry = new JSONObject();
 			try {
 				jsonEntry.put("hotelName", aVenue.getName());
 				jsonEntry.put("hotelImageUrl", url);
 				jsonEntry.put("hotelUrl", imageUrl);
 				jsonEntry.put("hotelAddr", aVenue.getArea().getName());
+				jsonEntry.put("hotelRating", aVenue.getRating());
+				jsonEntry.put("hotelDist", distance);
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
