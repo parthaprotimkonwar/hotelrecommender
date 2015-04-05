@@ -46,7 +46,7 @@ public class Util {
 			Venue aVenue = aSuggestion.getVenue();
 			String imageUrl = aVenue.getiUrl();
 			String url = aVenue.getUrl();
-			String distance = String.format(".2d", aSuggestion.getDfactor());
+			String distance = String.format("%.2F", aSuggestion.getDfactor());
 			jsonEntry = new JSONObject();
 			try {
 				jsonEntry.put("hotelName", aVenue.getName());
